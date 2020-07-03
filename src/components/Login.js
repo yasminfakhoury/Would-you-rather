@@ -1,31 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Redux from 'redux';
+// import { CHECK_USER } from '../actions'
 
 // needs to be connected to store so that we can see if the username and 
 // password that were inputted match up with a user in the database
-class Login extends Component {
+const Login = ({users, dispatch}) => {
 
+    // current state of the input values
+    const [ userEntry, setUserEntry ] = useState('');
+    const [ passwordEntry, setPasswordEntry ] = useState('');
 
+    // check if username exists, and if it matches password
+    function checkUser() {
+        console.log(`username: ${userEntry}, password: ${passwordEntry}`)
+       // dispatch(CHECK_USER);
+    };
 
-    render() {
-        return (
-            <div>
-                <form className='login'>
-                    <input
-                        type='text'
-                        className='user'
-                        placeholder='Username'
-                        value=''
-                        onChange='' 
-                    />
-                </form>
-            </div>
-        );
+    function handleCheckUser(event){
+        event.preventDefault();
+        checkUser();
     }
+
+    return (
+        <div>
+            <form className='login' onSubmit={handleCheckUser}>
+                <input
+                    type='text'
+                    className='user-input'
+                    placeholder='Username'
+                    value={userEntry}
+                    onChange={(e)=>{setUserEntry(e.target.value)}}
+                />
+                <input
+                    type='text'
+                    className='password-input'
+                    placeholder='Password'
+                    value={passwordEntry}
+                    onChange={(e)=>{setPasswordEntry(e.target.value)}} 
+                />
+                <input type='submit' value='go'/>
+            </form>
+        </div>
+    );
+
 }
 
-function mapStateToProps(){
-
+function mapStateToProps(state){
+    const {users} = state;
+    return {users};
 }
 
 export default Login;
