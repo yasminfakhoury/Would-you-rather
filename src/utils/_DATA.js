@@ -1,8 +1,9 @@
-let users = {
+export let users = {
   sarahedo: {
     id: 'sarahedo',
+    password: 'password123',
     name: 'Sarah Edo',
-    avatarURL: ,
+    avatarURL: './profile_pics/pennywise.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -13,8 +14,9 @@ let users = {
   },
   tylermcginnis: {
     id: 'tylermcginnis',
+    password: 'mindthegap',
     name: 'Tyler McGinnis',
-    avatarURL: ,
+    avatarURL: './profile_pics/uttersadness.jpeg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -23,8 +25,9 @@ let users = {
   },
   johndoe: {
     id: 'johndoe',
+    password: 'anabsolutedisgrace',
     name: 'John Doe',
-    avatarURL: ,
+    avatarURL: './profile_pics/daddy_curry.jpeg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

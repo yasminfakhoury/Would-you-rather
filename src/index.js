@@ -3,12 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ReactRedux from 'react-redux';
 
 ReactDOM.render(
-  <ReactRedux.Provider>
-    <App />
-  </ReactRedux.Provider>,
+    <App />,
   document.getElementById('root')
 );
 
